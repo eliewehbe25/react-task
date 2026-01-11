@@ -1,0 +1,51 @@
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.postFound{
+  font-weight: 700;
+}
+
+.article {
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+mark {
+  background-color: yellow;
+  padding: 2px;
+}
+
+/* responsive made also */
+
+@media (max-width: 768px) {
+  .container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: Arial, sans-serif;
+}
+
+input {
+  width: 70%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.title{
+  font-size: 18px;
+}
+.content{
+  font-size: 14px;
+}
+}
