@@ -1,4 +1,4 @@
-first run 
+first open the terminal then run
 ### `npm install`
 
 to install all packages
