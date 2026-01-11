@@ -1,4 +1,9 @@
-In the project directory, you can run the project using:
+first run 
+### `npm install`
+
+to install all packages
+
+then In the project directory, you can run the project using:
 
 ### `npm start`
 
