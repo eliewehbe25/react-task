@@ -1,0 +1,123 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px;
+  align-items: start;
+}
+
+.Pcard {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #f3f3f3;
+  /* similar to your screenshot (tall) */
+  aspect-ratio: 3 / 2;
+  transform: translateZ(0);
+}
+
+.media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    120% 120% at 20% 10%,
+    rgba(255, 255, 255, 0.08),
+    rgba(0, 0, 0, 0.09)
+  );
+  opacity: 0;
+  transition: opacity 450ms var(--ease);
+  pointer-events: none;
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1.0001);
+  transition:
+    transform 650ms var(--ease),
+    filter 650ms var(--ease);
+  will-change: transform;
+}
+
+.meta {
+  margin-top: 14px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.name {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(14px, 1.2vw, 16px);
+  letter-spacing: 0.01em;
+}
+
+.price {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(14px, 1.2vw, 16px);
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.name,
+.price {
+  position: relative;
+}
+
+/* premium underline animation */
+.name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 100%;
+  background: var(--text);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 450ms var(--ease);
+  opacity: 0.9;
+}
+
+/* hover */
+.Pcard:hover .media {
+  box-shadow: var(--shadow);
+}
+.Pcard:hover .media img {
+  transform: scale(1.06);
+  filter: saturate(1.05) contrast(1.03);
+}
+.Pcard:hover .media::after {
+  opacity: 1;
+}
+.Pcard:hover .name::after {
+  transform: scaleX(1);
+}
+
+/* focus */
+.Pcard:focus-visible {
+  outline: 3px solid rgba(0, 0, 0, 0.55);
+  outline-offset: 6px;
+  border-radius: 10px;
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
