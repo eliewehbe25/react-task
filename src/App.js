@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 import ProductItemsPage from "./productlist";
-import Test from "./test";
 
 export default function App() {
   const [search, setSearch] = useState("");
