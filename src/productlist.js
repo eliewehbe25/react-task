@@ -54,7 +54,6 @@ const [selectedProduct, setSelectedProduct] = useState(null);
   if (isError) return <p>{error?.data?.error || "Something went wrong"}</p>;
 
   const items = Array.isArray(data) ? data : data.items;
-   console.log("itemsssssssss", items)
    const fetchProductDetails = async (productId) => {
     try {
       setSelectedProduct(items[productId - 1])
@@ -75,7 +74,6 @@ const [selectedProduct, setSelectedProduct] = useState(null);
    const handleProductClick = (productId) => {
     fetchProductDetails(productId);
     setIsModalOpen(true)
-    console.log("idd", productId)
   };
 
    

@@ -5,11 +5,6 @@ import ProductItemsPage from "./productlist";
 export default function App() {
   const [search, setSearch] = useState("");
 
-  // const filteredArticles = articles.filter(
-  //   (article) =>
-  //     article.title.toLowerCase().includes(search.toLowerCase()) ||
-  //     article.content.toLowerCase().includes(search.toLowerCase())
-  // );
 
   return (
     <div className="container">
